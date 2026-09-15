@@ -1,0 +1,17 @@
+{
+  "name": "portal",
+  "version": "1.0.0",
+  "description": "Protótipo base do portal de serviços",
+  "main": "assets/app.js",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --check assets/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://localhost:26831/netorafael/portal"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal de Serviços</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Portal de Serviços</h1>
+      <p>Base inicial para futuras modificações do protótipo.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Serviços</h2>
+        <label for="service-search" class="label">Buscar serviço</label>
+        <input
+          id="service-search"
+          type="search"
+          placeholder="Digite o nome do serviço"
+        />
+        <ul id="service-list" class="service-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Detalhes</h2>
+        <article id="service-detail" class="service-detail">
+          Selecione um serviço para ver os detalhes.
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>
