@@ -1,0 +1,17 @@
+[
+  {
+    "id": "segunda-via-iptu",
+    "name": "2ª via do IPTU",
+    "description": "Emita a segunda via do boleto de IPTU para pagamento."
+  },
+  {
+    "id": "agendamento-saude",
+    "name": "Agendamento de consulta",
+    "description": "Solicite consulta médica na rede municipal de saúde."
+  },
+  {
+    "id": "iluminacao-publica",
+    "name": "Solicitação de iluminação pública",
+    "description": "Registre ocorrências de lâmpadas apagadas em via pública."
+  }
+]
