@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+/* Import gov.br rawline font */
+@import url('https://fonts.cdnfonts.com/css/rawline');
+
+@theme {
+  --font-sans: "rawline", sans-serif;
+  --font-heading: "rawline", sans-serif;
+  --font-mono: "rawline", monospace;
+
+  /* Map all typography grays to #333333 (Gov.br --gray-80 standard text color) */
+  --color-gray-500: #333333;
+  --color-gray-600: #333333;
+  --color-gray-650: #333333;
+  --color-gray-700: #333333;
+  --color-gray-800: #333333;
+  --color-gray-900: #333333;
+  --color-gray-950: #333333;
+}
+
+body, html, #root {
+  font-family: 'rawline', sans-serif !important;
+}
+
+/* WCAG 2.4.13 Focus Appearance - Suppress focus outlines by default on click */
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Yellow dashed outline matching gov.br only when navigating with keyboard TAB */
+.user-is-tabbing *:focus,
+.user-is-tabbing *:focus-visible {
+  outline: 2px dashed #df8d00 !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
+
+/* Dynamic High Contrast Mode overrides (federal Gov.br style) */
+.high-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast body,
+.high-contrast #root {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* High contrast rule elements override */
+.high-contrast-active {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast-active * {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Interactive elements in High Contrast must use strong yellow/cyan markers */
+.high-contrast-active a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast-active a:hover,
+.high-contrast-active a:focus-visible {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+.high-contrast-active button,
+.high-contrast-active select,
+.high-contrast-active input {
+  color: #ffff00 !important;
+  border: 2px solid #ffffff !important;
+  background-color: #000000 !important;
+}
+
+.high-contrast-active button:hover,
+.high-contrast-active button:focus-visible {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+.high-contrast-active svg,
+.high-contrast-active svg path {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+  color: #ffff00 !important;
+}
+
+.high-contrast-active p,
+.high-contrast-active span,
+.high-contrast-active h1,
+.high-contrast-active h2,
+.high-contrast-active h3,
+.high-contrast-active h4,
+.high-contrast-active h5,
+.high-contrast-active h6 {
+  color: #ffffff !important;
+}
+
+.high-contrast-active .bg-blue-900,
+.high-contrast-active .bg-slate-100,
+.high-contrast-active .bg-teal-800,
+.high-contrast-active .bg-amber-50,
+.high-contrast-active .bg-sky-50,
+.high-contrast-active .bg-white,
+.high-contrast-active .bg-gradient-to-r,
+.high-contrast-active #card-carta-servicos-institucional {
+  background-color: #000000 !important;
+  background-image: none !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* High Contrast overrides for "Não encontrou o serviço que procura?" card */
+.high-contrast-active #card-carta-servicos-institucional {
+  background-color: #000000 !important;
+  background-image: none !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: none !important;
+}
+
+.high-contrast-active #card-carta-servicos-institucional * {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.high-contrast-active #card-carta-servicos-institucional h3,
+.high-contrast-active #card-carta-servicos-institucional h3 span {
+  color: #ffff00 !important;
+  font-weight: bold !important;
+}
+
+.high-contrast-active #card-carta-servicos-institucional p {
+  color: #ffffff !important;
+}
+
+/* Style the action buttons inside the card consistently in High Contrast */
+.high-contrast-active #card-carta-servicos-institucional a,
+.high-contrast-active #card-carta-servicos-institucional button {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.high-contrast-active #card-carta-servicos-institucional a *,
+.high-contrast-active #card-carta-servicos-institucional button * {
+  color: #ffff00 !important;
+}
+
+.high-contrast-active #card-carta-servicos-institucional a:hover,
+.high-contrast-active #card-carta-servicos-institucional button:hover,
+.high-contrast-active #card-carta-servicos-institucional a:focus-visible,
+.high-contrast-active #card-carta-servicos-institucional button:focus-visible {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+.high-contrast-active #card-carta-servicos-institucional a:hover *,
+.high-contrast-active #card-carta-servicos-institucional button:hover * {
+  color: #000000 !important;
+}
+
+/* Skip link styling for WCAG 2.4.1 Skip Blocks */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 20px;
+  background-color: #f59e0b;
+  color: #000000;
+  padding: 10px 15px;
+  z-index: 99999;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* 
+ * Freeze layout & font scale of #topo-cabecalho.
+ * When root (rem) font sizes change, this container and all its elements
+ * remain at their standard/default absolute scales (pixels).
+ */
+#topo-cabecalho, #topo-cabecalho * {
+  /* Prevent inherited relative font changes on elements default sizes */
+}
+
+/* Explicit pixel overrides for all text size classes inside the header */
+#topo-cabecalho .text-\[10px\] { font-size: 10px !important; line-height: 14px !important; }
+#topo-cabecalho .text-\[11px\] { font-size: 11px !important; line-height: 15px !important; }
+#topo-cabecalho .text-xs { font-size: 12px !important; line-height: 16px !important; }
+#topo-cabecalho .text-sm { font-size: 14px !important; line-height: 20px !important; }
+#topo-cabecalho .text-base { font-size: 16px !important; line-height: 24px !important; }
+#topo-cabecalho .text-lg { font-size: 18px !important; line-height: 28px !important; }
+#topo-cabecalho .text-xl { font-size: 20px !important; line-height: 28px !important; }
+
+/* Explicit overrides for width/height/spacing classes inside the header */
+#topo-cabecalho .w-3 { width: 12px !important; }
+#topo-cabecalho .h-3 { height: 12px !important; }
+#topo-cabecalho .w-3\.5 { width: 14px !important; }
+#topo-cabecalho .h-3\.5 { height: 14px !important; }
+#topo-cabecalho .w-4 { width: 16px !important; }
+#topo-cabecalho .h-4 { height: 16px !important; }
+#topo-cabecalho .w-5 { width: 20px !important; }
+#topo-cabecalho .h-5 { height: 20px !important; }
+#topo-cabecalho .w-6 { width: 24px !important; }
+#topo-cabecalho .h-6 { height: 24px !important; }
+
+#topo-cabecalho .py-1 { padding-top: 4px !important; padding-bottom: 4px !important; }
+#topo-cabecalho .py-1\.5 { padding-top: 6px !important; padding-bottom: 6px !important; }
+#topo-cabecalho .py-2 { padding-top: 8px !important; padding-bottom: 8px !important; }
+#topo-cabecalho .py-3 { padding-top: 12px !important; padding-bottom: 12px !important; }
+#topo-cabecalho .py-4 { padding-top: 16px !important; padding-bottom: 16px !important; }
+#topo-cabecalho .py-3\.5 { padding-top: 14px !important; padding-bottom: 14px !important; }
+#topo-cabecalho .py-0\.5 { padding-top: 2px !important; padding-bottom: 2px !important; }
+
+#topo-cabecalho .px-1 { padding-left: 4px !important; padding-right: 4px !important; }
+#topo-cabecalho .px-2 { padding-left: 8px !important; padding-right: 8px !important; }
+#topo-cabecalho .px-2\.5 { padding-left: 10px !important; padding-right: 10px !important; }
+#topo-cabecalho .px-3 { padding-left: 12px !important; padding-right: 12px !important; }
+#topo-cabecalho .px-4 { padding-left: 16px !important; padding-right: 16px !important; }
+
+#topo-cabecalho .p-1\.5 { padding: 6px !important; }
+
+#topo-cabecalho .gap-1 { gap: 4px !important; }
+#topo-cabecalho .gap-1\.5 { gap: 6px !important; }
+#topo-cabecalho .gap-2 { gap: 8px !important; }
+#topo-cabecalho .gap-3 { gap: 12px !important; }
+#topo-cabecalho .gap-4 { gap: 16px !important; }
+
+#topo-cabecalho .w-64 { width: 256px !important; }
+#topo-cabecalho .w-72 { width: 288px !important; }
+#topo-cabecalho .max-w-sm { max-width: 384px !important; }
+#topo-cabecalho .max-w-7xl { max-width: 1280px !important; }
+
+/* Ensure all text links keep their underline on hover and change color smoothly */
+a.underline:hover,
+button.underline:hover {
+  text-decoration: underline !important;
+  text-decoration-color: currentColor !important;
+}
+

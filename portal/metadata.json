@@ -1,0 +1,6 @@
+{
+  "name": "Portal de Serviços do TST",
+  "description": "Portal de Serviços do Tribunal Superior do Trabalho (TST), facilitando o acesso a certidões, processos e simulações de serviços.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
